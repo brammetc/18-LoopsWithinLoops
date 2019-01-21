@@ -117,7 +117,7 @@ def multiply_numbers(sequence_of_lists):
        [FYI: This 'can be multiplied ...' is an example of DUCK TYPING.]
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
@@ -138,7 +138,7 @@ def multiply_numbers(sequence_of_lists):
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  sum_numbers  function defined below.
     #   Include at least **   3   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -159,6 +159,21 @@ def run_test_sum_numbers():
 
     # TO DO 3 (continued): Add your ADDITIONAL test(s) here:
 
+    # Test 3:
+    expected = 24
+    answer = sum_numbers([(1, 2, 5), (3, 1), [2, 5, 3, 2]])
+    print('Expected and actual are:', expected, answer)
+
+    # Test 4:
+    expected = 33
+    answer = sum_numbers([(2, 1, 4), (12, 3), [1, 6, 3, 1]])
+    print('Expected and actual are:', expected, answer)
+
+    # Test 5:
+    expected = 29
+    answer = sum_numbers([(2, 1, 0), (12, 3), [1, 6, 3, 1]])
+    print('Expected and actual are:', expected, answer)
+
 
 def sum_numbers(seq_seq):
     """
@@ -171,10 +186,16 @@ def sum_numbers(seq_seq):
                     and each item in the subsequences is a number.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
+    total = 0
+    for j in range(len(seq_seq)):
+        sublist = seq_seq[j]
+        for k in range(len(sublist)):
+            total = total + sublist[k]
+    return total
 
 def run_test_print_characters():
     """ Tests the    print_characters    function. """
@@ -222,11 +243,15 @@ def print_characters(sequence_of_strings):
     Precondition:  the given argument is a sequence of strings.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     # ------------------------------------------------------------------
 
+    for j in range(len(sequence_of_strings)):
+        sublist = sequence_of_strings[j]
+        for k in range(len(sublist)):
+            print(sublist[k])
 
 def run_test_print_characters_slanted():
     """ Tests the    print_characters_slanted    function. """
@@ -275,14 +300,19 @@ def print_characters_slanted(sequence_of_strings):
     Precondition:  the given argument is a sequence of strings.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
     # ** HINT: ** Consider using string multiplication for the spaces
     #             and string addition to stitch the spaces to the character.
     # ------------------------------------------------------------------
-
+    for j in range(len(sequence_of_strings)):
+        sublist = sequence_of_strings[j]
+        for k in range(len(sublist)):
+            for r in range(k):
+                print(' ', end='')
+            print(sublist[k])
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
